@@ -9,6 +9,7 @@ import {
   ChainId,
 } from '@aave/contract-helpers';
 import { useProtocolDataContext } from '../../protocol-data-provider';
+import { useStaticPoolDataContext } from '../providers/static-pool-data-provider';
 
 // interval in which the rpc data is refreshed
 const POOLING_INTERVAL = 30 * 1000;
@@ -73,6 +74,7 @@ export function useIncentivesData(
   userAddress?: string
 ): IncentiveDataResponse {
   const { networkConfig } = useProtocolDataContext();
+  const { marketRefCurrencyDecimals } = useStaticPoolDataContext();
   const currentAccount: string | undefined = userAddress ? userAddress.toLowerCase() : undefined;
   const [loadingReserveIncentives, setLoadingReserveIncentives] = useState<boolean>(true);
   const [errorReserveIncentives, setErrorReserveIncentives] = useState<boolean>(false);
@@ -118,9 +120,11 @@ export function useIncentivesData(
       const rawReserveIncentiveData =
         await incentiveDataProviderContract.getIncentivesDataWithPrice({
           lendingPoolAddressProvider,
-          quote: networkConfig.usdMarket ? Denominations.usd : Denominations.eth,
+          quote: marketRefCurrencyDecimals === 8 ? Denominations.usd : Denominations.eth,
           chainlinkFeedsRegistry: networkConfig.addresses.chainlinkFeedRegistry,
         });
+
+      console.log('incentives data: ', rawReserveIncentiveData)
       setReserveIncentiveData(rawReserveIncentiveData);
       setErrorReserveIncentives(false);
     } catch (e) {

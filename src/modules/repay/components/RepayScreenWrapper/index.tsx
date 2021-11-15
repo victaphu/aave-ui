@@ -13,7 +13,7 @@ import { isAssetStable } from '../../../../helpers/config/assets-config';
 
 import messages from './messages';
 import staticStyles from './style';
-import { useProtocolDataContext } from '../../../../libs/protocol-data-provider';
+import { useStaticPoolDataContext } from '../../../../libs/pool-data-provider';
 
 interface RepayScreenWrapperProps {
   title: string;
@@ -43,7 +43,7 @@ export default function RepayScreenWrapper({
   children,
 }: RepayScreenWrapperProps) {
   const intl = useIntl();
-  const { networkConfig } = useProtocolDataContext();
+  const { marketRefCurrencyDecimals } = useStaticPoolDataContext();
 
   return (
     <>
@@ -83,7 +83,7 @@ export default function RepayScreenWrapper({
             <Value
               value={Number(totalCollateralUSD)}
               subValue={
-                !networkConfig.usdMarket
+                marketRefCurrencyDecimals === 18
                   ? Number(totalCollateralMarketReferenceCurrency)
                   : undefined
               }

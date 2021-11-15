@@ -103,7 +103,6 @@ export const networkConfigs: Record<string, BaseNetworkConfig> = {
     rewardTokenSymbol: 'WAVAX',
     explorerLink: 'https://cchain.explorer.avax-test.network',
     rpcOnly: true,
-    usdMarket: true,
     isTestnet: true,
     bridge: {
       brandColor: '232, 65, 66',
@@ -130,7 +129,6 @@ export const networkConfigs: Record<string, BaseNetworkConfig> = {
     rewardTokenSymbol: 'WAVAX',
     explorerLink: 'https://cchain.explorer.avax.network',
     rpcOnly: false,
-    usdMarket: true,
     bridge: {
       brandColor: '232, 65, 66',
       name: 'Avalanche Bridge',

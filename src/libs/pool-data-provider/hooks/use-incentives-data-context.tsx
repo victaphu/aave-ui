@@ -43,7 +43,7 @@ export interface IncentivesContext {
 const IncentivesDataContext = React.createContext({} as IncentivesContext);
 
 export function IncentivesDataProvider({ children }: { children: ReactNode }) {
-  const { userId, rawReservesWithBase, rawUserReservesWithBase } = useStaticPoolDataContext();
+  const { userId, rawReservesWithBase, rawUserReservesWithBase, marketRefCurrencyDecimals } = useStaticPoolDataContext();
   const { chainId, networkConfig, currentMarketData } = useProtocolDataContext();
   const { chainId: apolloClientChainId } = useApolloConfigContext();
   const { preferredConnectionMode, isRPCActive } = useConnectionStatusContext();
@@ -61,7 +61,7 @@ export function IncentivesDataProvider({ children }: { children: ReactNode }) {
     currentMarketData.addresses.LENDING_POOL_ADDRESS_PROVIDER,
     currentAccount,
     networkConfig.addresses.chainlinkFeedRegistry,
-    networkConfig.usdMarket ? Denominations.usd : Denominations.eth,
+    marketRefCurrencyDecimals === 8 ? Denominations.usd : Denominations.eth,
     preferredConnectionMode === ConnectionMode.rpc ||
       chainId !== apolloClientChainId ||
       !networkConfig.addresses.uiIncentiveDataProvider

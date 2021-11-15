@@ -36,7 +36,6 @@ export type NetworkConfig = {
   baseAsset: string;
   baseAssetWrappedAddress?: string;
   rewardTokenSymbol: string;
-  usdMarket?: boolean;
   // function returning a link to etherscan et al
   explorerLink: string;
   explorerLinkBuilder: (props: ExplorerLinkBuilderProps) => string;
