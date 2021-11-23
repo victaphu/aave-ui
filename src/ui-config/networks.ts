@@ -2,6 +2,7 @@ import { API_ETH_MOCK_ADDRESS } from '@aave/protocol-js';
 import { BaseNetworkConfig } from '../helpers/config/types';
 import polygonBridgeLogo from './branding/images/polygonLogo.svg';
 import avalancheBridgeLogo from './branding/images/avalancheLogo.svg';
+import harmonyBridgeLogo from './branding/images/harmonyLogo.svg';
 import { ChainId } from '@aave/contract-helpers';
 
 export const networkConfigs: Record<string, BaseNetworkConfig> = {
@@ -99,6 +100,38 @@ export const networkConfigs: Record<string, BaseNetworkConfig> = {
     explorerLink: 'https://explorer-mumbai.maticvigil.com',
     rpcOnly: true,
     isTestnet: true,
+  },
+  [ChainId.harmonyTest]: {
+    name: 'Harmony Test',
+    publicJsonRPCUrl: ['https://api.s0.b.hmny.io/'],
+    publicJsonRPCWSUrl: 'wss://ws.s0.pga.hmny.io/',
+    addresses: {
+      walletBalanceProvider: '0x335FE8ACC0022422d14b53A73537bb664fdcBAD7',
+      uiPoolDataProvider: '0xD3c25650E2B53eF5ED94E365Cc032aFcB56D9505',
+      uiIncentiveDataProvider: '0xCA1Adb4164CEdB5E22DE41482c84B9293C614ffF',
+    },
+    protocolDataUrl: 'https://api.thegraph.com/subgraphs/name/aave/protocol-v2-fuji',///
+    baseUniswapAdapter: '0x0',
+    baseAsset: 'ONE',
+    baseAssetWrappedAddress: '0x7466d7d0c21fa05f32f5a0fa27e12bdc06348ce2',
+    // incentives hardcoded information
+    rewardTokenSymbol: 'WONE',
+    rewardTokenAddress: API_ETH_MOCK_ADDRESS,
+    rewardTokenDecimals: 18,
+    incentivePrecision: 18,
+    explorerLink: 'https://explorer.pops.one/#/',
+    rpcOnly: true,
+    usdMarket: true,
+    isTestnet: true,
+    bridge: {
+      brandColor: '232, 65, 66',
+      name: 'Harmony Bridge',
+      url: 'https://testnet.bridge.hmny.io/',
+      logo: harmonyBridgeLogo,
+    },
+  },
+  [ChainId.harmony]: {
+
   },
   [ChainId.fuji]: {
     name: 'Fuji',
