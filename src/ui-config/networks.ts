@@ -130,9 +130,6 @@ export const networkConfigs: Record<string, BaseNetworkConfig> = {
       logo: harmonyBridgeLogo,
     },
   },
-  [ChainId.harmony]: {
-
-  },
   [ChainId.fuji]: {
     name: 'Fuji',
     publicJsonRPCUrl: ['https://api.avax-test.network/ext/bc/C/rpc'],

@@ -64,6 +64,24 @@ const ADD_CONFIG: {
       decimals: 18,
     },
   },
+  [ChainId.harmonyTest]: {
+    name: 'Harmony Testnet',
+    explorerUrls: ['https://explorer.pops.one/#/'],
+    nativeCurrency: {
+      name: 'Harmony',
+      symbol: 'ONe',
+      decimals: 18,
+    },
+  },
+  [ChainId.harmony]: {
+    name: 'Harmony',
+    explorerUrls: ['https://explorer.harmony.one/#/'],
+    nativeCurrency: {
+      name: 'Harmony',
+      symbol: 'ONE',
+      decimals: 18,
+    },
+  },
 };
 
 export default function NetworkMismatch({

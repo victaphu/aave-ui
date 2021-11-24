@@ -12,6 +12,7 @@ export enum CustomMarket {
   amm_kovan = 'amm_kovan',
   amm_mainnet = 'amm_mainnet',
   proto_fuji = 'proto_fuji',
+  proto_harmonyTest = 'proto_harmonyTest',
 }
 
 export const marketsData: { [key in keyof typeof CustomMarket]: MarketDataType } = {
@@ -142,6 +143,22 @@ export const marketsData: { [key in keyof typeof CustomMarket]: MarketDataType }
       LENDING_POOL: '0x4F01AeD16D97E3aB5ab2B501154DC9bb0F1A5A2C',
       WETH_GATEWAY: '0x8a47F74d1eE0e2edEB4F3A7e64EF3bD8e11D27C8',
       SWAP_COLLATERAL_ADAPTER: '0x2EcF2a2e74B19Aab2a62312167aFF4B78E93B6C5',
+    },
+  },
+  [CustomMarket.proto_harmonyTest]: {
+    chainId: ChainId.harmonyTest,
+    logo: logos.aaveLogo,
+    activeLogo: logos.aaveActiveLogo,
+    subLogo: logos.harmony,
+    aTokenPrefix: 'ONE',
+    enabledFeatures: {
+      
+      incentives: true,
+    },
+    addresses: {
+      LENDING_POOL_ADDRESS_PROVIDER: '0x0d2087036a228D62024a30eCd1091EB800564Be6'.toLowerCase(),
+      LENDING_POOL: '0xb7aBD6CDAB8C146f52a6a2198f3083b3626e5649',
+      WETH_GATEWAY: '0x362F87D15F14B9E50B73A51D38622E87986ec2aF',
     },
   },
 } as const;
