@@ -110,7 +110,7 @@ export const networkConfigs: Record<string, BaseNetworkConfig> = {
       uiPoolDataProvider: '0xDda2d9cB888f43cC78886a196f463557C4572C61',
       uiIncentiveDataProvider: '0xDB222778C1d86E5bFa10157Bb42E7A52EE5eFD09',
     },
-    protocolDataUrl: 'https://api.thegraph.com/subgraphs/name/aave/protocol-v2-fuji',///xxx
+    protocolDataUrl: 'https://api.thegraph.com/subgraphs/name/aave/protocol-v2-fuji', ///xxx
     baseUniswapAdapter: '0x0',
     baseAsset: 'ONE',
     baseAssetWrappedAddress: '0x7466d7d0c21fa05f32f5a0fa27e12bdc06348ce2',

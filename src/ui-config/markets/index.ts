@@ -152,7 +152,6 @@ export const marketsData: { [key in keyof typeof CustomMarket]: MarketDataType }
     subLogo: logos.harmony,
     aTokenPrefix: 'ONE',
     enabledFeatures: {
-      
       incentives: true,
     },
     addresses: {

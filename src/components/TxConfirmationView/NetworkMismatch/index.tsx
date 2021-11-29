@@ -72,7 +72,7 @@ const ADD_CONFIG: {
       symbol: 'One',
       decimals: 18,
     },
-  }
+  },
 };
 
 export default function NetworkMismatch({

@@ -19,5 +19,5 @@ export {
   aavev2ActiveLogo,
   arbitrium,
   avalanche,
-  harmony
+  harmony,
 };
