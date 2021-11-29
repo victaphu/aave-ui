@@ -106,11 +106,11 @@ export const networkConfigs: Record<string, BaseNetworkConfig> = {
     publicJsonRPCUrl: ['https://api.s0.b.hmny.io/'],
     publicJsonRPCWSUrl: 'wss://ws.s0.pga.hmny.io/',
     addresses: {
-      walletBalanceProvider: '0x335FE8ACC0022422d14b53A73537bb664fdcBAD7',
-      uiPoolDataProvider: '0xD3c25650E2B53eF5ED94E365Cc032aFcB56D9505',
-      uiIncentiveDataProvider: '0xCA1Adb4164CEdB5E22DE41482c84B9293C614ffF',
+      walletBalanceProvider: '0xAF5db830Bc205891B5A82019a5187fBA114aba25',
+      uiPoolDataProvider: '0xDda2d9cB888f43cC78886a196f463557C4572C61',
+      uiIncentiveDataProvider: '0xDB222778C1d86E5bFa10157Bb42E7A52EE5eFD09',
     },
-    protocolDataUrl: 'https://api.thegraph.com/subgraphs/name/aave/protocol-v2-fuji',///
+    protocolDataUrl: 'https://api.thegraph.com/subgraphs/name/aave/protocol-v2-fuji',///xxx
     baseUniswapAdapter: '0x0',
     baseAsset: 'ONE',
     baseAssetWrappedAddress: '0x7466d7d0c21fa05f32f5a0fa27e12bdc06348ce2',
